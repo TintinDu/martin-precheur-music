@@ -21,10 +21,11 @@ export function NowPlaying(): React.JSX.Element {
 
   return (
     <section className={styles.section}>
-      <div className={styles.label}>— recently played</div>
+      <div className={styles.label}>// recently played</div>
       {isLoading && <div className={styles.skeleton} />}
       {recent && (
         <div className={styles.card}>
+          <span className={styles.dot} aria-hidden="true" />
           {recent.track.albums[0]?.image ? (
             <img
               src={recent.track.albums[0].image}

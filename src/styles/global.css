@@ -1,26 +1,29 @@
 :root {
-  /* Lo-fi color palette */
-  --color-bg: #1a1209;
-  --color-surface: #241a0e;
-  --color-surface2: #2e2010;
-  --color-border: rgba(255, 200, 120, 0.12);
-  --color-cream: #f0e6c8;
-  --color-amber: #d4921a;
-  --color-amber-dim: rgba(212, 146, 26, 0.5);
-  --color-orange: #c4581a;
-  --color-red: #8b2010;
-  --color-text: #d8c9a8;
-  --color-text-dim: rgba(216, 201, 168, 0.45);
-  --color-text-muted: rgba(216, 201, 168, 0.25);
+  --color-bg: #050510;
+  --color-bg2: #0a0a1a;
+  --color-surface: #0f0f22;
+  --color-surface2: #141428;
+  --color-border: rgba(80, 180, 255, 0.15);
+  --color-border-bright: rgba(80, 180, 255, 0.35);
+  --color-blue: #50b4ff;
+  --color-blue-bright: #7dd4ff;
+  --color-blue-dim: rgba(80, 180, 255, 0.25);
+  --color-purple: #8844ff;
+  --color-purple-dim: rgba(136, 68, 255, 0.3);
+  --color-green: #00ff88;
+  --color-green-dim: rgba(0, 255, 136, 0.2);
+  --color-white: #e8f0ff;
+  --color-text: #9ab4d4;
+  --color-text-dim: rgba(154, 180, 212, 0.45);
+  --color-text-muted: rgba(154, 180, 212, 0.22);
+  --color-red: #ff3355;
 
-  /* Fonts */
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-mono: 'Space Mono', 'Courier New', monospace;
-  --font-body: 'Inter', sans-serif;
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Share Tech Mono', monospace;
 
-  /* Timing */
-  --timing-fast: 0.18s;
-  --timing-normal: 0.35s;
+  --timing-fast: 0.15s;
+  --timing-normal: 0.3s;
   --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
 }
 
@@ -42,10 +45,7 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
-  /* Grain texture overlay */
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  background-size: 256px 256px;
+  overflow-x: hidden;
 }
 
 a {
@@ -59,6 +59,11 @@ img {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-amber);
+  outline: 2px solid var(--color-blue);
   outline-offset: 2px;
+}
+
+/* Glow utility */
+.glow-blue {
+  box-shadow: 0 0 20px var(--color-blue-dim), 0 0 40px rgba(80, 180, 255, 0.1);
 }
