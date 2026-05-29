@@ -143,7 +143,7 @@ export const COVERS: readonly CoverTrack[] = [
     album: 'The Rise and Fall of Ziggy Stardust',
     albumImage: 'https://i.scdn.co/image/ab67616d0000b273c41f4e1133b0e6c5fcf58680',
     spotifyUrl: 'https://open.spotify.com/track/1JIzFhI9Lt5FyslawmHCBi',
-    youtubeUrl: 'https://www.youtube.com/watch?v=dMH0bHeiRNg',
+    youtubeUrl: 'https://www.youtube.com/watch?v=2ObjtVdsV3I',
   },
 ] as const;
 
