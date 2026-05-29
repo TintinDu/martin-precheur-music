@@ -1,0 +1,81 @@
+.section {
+  padding: 40px 0 24px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-amber);
+}
+
+.artwork {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  object-fit: cover;
+  filter: sepia(0.3) contrast(1.1);
+}
+
+.artworkPlaceholder {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  background: var(--color-surface2);
+  border: 1px solid var(--color-border);
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.trackName {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--color-cream);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.artistName {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-amber);
+  letter-spacing: 1px;
+}
+
+.time {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: 6px;
+  letter-spacing: 1px;
+}
+
+.skeleton {
+  height: 112px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

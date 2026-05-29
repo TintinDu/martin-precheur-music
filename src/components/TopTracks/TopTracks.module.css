@@ -1,0 +1,127 @@
+.section {
+  padding: 40px 0;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.rangeButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.rangeBtn {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  background: none;
+  border: 1px solid transparent;
+  padding: 3px 8px;
+  cursor: pointer;
+  transition: all var(--timing-fast) var(--ease-out);
+}
+
+.rangeBtn[data-active='true'] {
+  color: var(--color-amber);
+  border-color: var(--color-amber-dim);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--timing-fast) var(--ease-out);
+}
+
+.track:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.position {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  width: 24px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.artwork {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  object-fit: cover;
+  filter: sepia(0.3) contrast(1.1);
+}
+
+.artworkPlaceholder {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: var(--color-surface2);
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.trackName {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--color-cream);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artistName {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-amber);
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.streams {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.skeleton {
+  height: 65px;
+  background: var(--color-surface);
+  margin-bottom: 1px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>martin — what i'm listening to</title>
+    <meta name="description" content="Martin's music stats — top artists, tracks, and listening history." />
+
+    <style>
+      :root {
+        --color-bg: #1a1209;
+        --color-surface: #241a0e;
+        --color-surface2: #2e2010;
+        --color-border: rgba(255, 200, 120, 0.12);
+        --color-cream: #f0e6c8;
+        --color-amber: #d4921a;
+        --color-amber-dim: rgba(212, 146, 26, 0.5);
+        --color-orange: #c4581a;
+        --color-red: #8b2010;
+        --color-text: #d8c9a8;
+        --color-text-dim: rgba(216, 201, 168, 0.45);
+        --color-text-muted: rgba(216, 201, 168, 0.25);
+        --font-serif: 'Playfair Display', Georgia, serif;
+        --font-mono: 'Space Mono', 'Courier New', monospace;
+        --font-body: 'Inter', sans-serif;
+        --timing-fast: 0.18s;
+        --timing-normal: 0.35s;
+        --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+      }
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      body { background: var(--color-bg); color: var(--color-text); }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
