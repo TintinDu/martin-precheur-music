@@ -23,7 +23,7 @@ export async function getRecentStreams(): Promise<RecentStream[]> {
 }
 
 export async function getUserStats(): Promise<UserStats> {
-  const res = await fetch(`${BASE}/users/${USER}/stats`);
+  const res = await fetch(`${BASE}/users/${USER}/streams/stats`);
   if (!res.ok) throw new Error(`stats.fm API error: ${res.status}`);
   const json = await res.json() as { items: UserStats };
   return json.items;

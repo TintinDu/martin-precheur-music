@@ -40,7 +40,7 @@ export interface SpotifyTrack {
 export async function getPlaylistTracks(): Promise<SpotifyTrack[]> {
   const token = await getToken();
   const res = await fetch(
-    `https://api.spotify.com/v1/playlists/${PLAYLIST_ID}/tracks?fields=items(track(id,name,artists,album,duration_ms,external_urls,preview_url))&limit=50`,
+    `https://api.spotify.com/v1/playlists/${PLAYLIST_ID}/tracks?limit=50`,
     { headers: { Authorization: `Bearer ${token}` } },
   );
   if (!res.ok) throw new Error('Spotify playlist fetch failed');
