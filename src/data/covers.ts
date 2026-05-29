@@ -109,6 +109,42 @@ export const COVERS: readonly CoverTrack[] = [
     spotifyUrl: 'https://open.spotify.com/track/73CKjW3vsUXRpy3NnX4H7F',
     youtubeUrl: 'https://www.youtube.com/watch?v=n5h0qHwNrHk',
   },
+  {
+    id: '1StXVL5gClph4z4XzanYko',
+    name: 'Lilac Wine',
+    artists: ['Jeff Buckley'],
+    album: 'Grace',
+    albumImage: 'https://i.scdn.co/image/ab67616d0000b273afc2d1d2c8703a10aeded0af',
+    spotifyUrl: 'https://open.spotify.com/track/1StXVL5gClph4z4XzanYko',
+    youtubeUrl: 'https://www.youtube.com/watch?v=oZF3Z7oj1eQ',
+  },
+  {
+    id: '7x8pIrhMu9FCmqqHNyuH0P',
+    name: 'cellophane',
+    artists: ['FKA twigs'],
+    album: 'MAGDALENE',
+    albumImage: 'https://i.scdn.co/image/ab67616d0000b27386011cee37f1842374d971aa',
+    spotifyUrl: 'https://open.spotify.com/track/7x8pIrhMu9FCmqqHNyuH0P',
+    youtubeUrl: 'https://www.youtube.com/watch?v=YkLjqFpBh84',
+  },
+  {
+    id: '3OHevW2cUT176DXWV0lHg9',
+    name: 'A Wolf At the Door',
+    artists: ['Radiohead'],
+    album: 'Hail to the Thief',
+    albumImage: 'https://i.scdn.co/image/ab67616d0000b2730da53e8f58e59f28a79c10c7',
+    spotifyUrl: 'https://open.spotify.com/track/3OHevW2cUT176DXWV0lHg9',
+    youtubeUrl: 'https://www.youtube.com/watch?v=6isz01iv8Ls',
+  },
+  {
+    id: '1JIzFhI9Lt5FyslawmHCBi',
+    name: 'Five Years',
+    artists: ['David Bowie'],
+    album: 'The Rise and Fall of Ziggy Stardust',
+    albumImage: 'https://i.scdn.co/image/ab67616d0000b273c41f4e1133b0e6c5fcf58680',
+    spotifyUrl: 'https://open.spotify.com/track/1JIzFhI9Lt5FyslawmHCBi',
+    youtubeUrl: 'https://www.youtube.com/watch?v=dMH0bHeiRNg',
+  },
 ] as const;
 
 // To add your cover: add myVersionUrl: 'https://youtube.com/...' to the track
