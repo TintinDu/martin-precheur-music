@@ -3,6 +3,7 @@ import { NowPlaying } from './components/NowPlaying/NowPlaying';
 import { TopArtists } from './components/TopArtists/TopArtists';
 import { TopTracks } from './components/TopTracks/TopTracks';
 import { Stats } from './components/Stats/Stats';
+import { Covers } from './components/Covers/Covers';
 import styles from './App.module.css';
 
 type Tab = 'listen' | 'play' | 'contact';
@@ -49,7 +50,7 @@ export default function App(): React.JSX.Element {
             <TopTracks />
           </>
         )}
-        {tab === 'play' && <PlaySection />}
+        {tab === 'play' && <Covers />}
         {tab === 'contact' && <ContactSection />}
       </main>
 
@@ -61,15 +62,6 @@ export default function App(): React.JSX.Element {
   );
 }
 
-function PlaySection(): React.JSX.Element {
-  return (
-    <div style={{ padding: '60px 0', fontFamily: 'var(--font-pixel)', fontSize: '10px', color: 'var(--color-text-dim)', lineHeight: 2 }}>
-      <div style={{ color: 'var(--color-blue)', marginBottom: 20 }}>// WHAT I PLAY</div>
-      <p>Covers of songs I love.</p>
-      <p style={{ marginTop: 12, color: 'var(--color-text-muted)' }}>Demo coming soon_</p>
-    </div>
-  );
-}
 
 function ContactSection(): React.JSX.Element {
   return (
