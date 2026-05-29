@@ -53,19 +53,28 @@ export function Covers(): React.JSX.Element {
                 </div>
 
                 <div className={styles.links} onClick={e => e.stopPropagation()}>
-                  {track.myVersionUrl && (
+                  <a
+                    href={track.youtubeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.linkBtn}
+                    data-type="youtube"
+                    aria-label={`Watch ${track.name} on YouTube`}
+                  >
+                    ▶ yt
+                  </a>
+                  {track.myVersionUrl ? (
                     <a
                       href={track.myVersionUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.linkBtn}
-                      data-type="youtube"
-                      aria-label={`My cover of ${track.name} on YouTube`}
+                      data-type="cover"
+                      aria-label={`My cover of ${track.name}`}
                     >
-                      ▶ my version
+                      ★ my version
                     </a>
-                  )}
-                  {!track.myVersionUrl && (
+                  ) : (
                     <span className={styles.linkBtn} data-type="soon">
                       soon_
                     </span>

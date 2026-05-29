@@ -51,3 +51,4 @@ export interface UserStats {
 }
 
 export type Range = 'weeks' | 'months' | 'lifetime';
+
