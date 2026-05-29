@@ -5,10 +5,20 @@ import styles from './Covers.module.css';
 
 export function Covers(): React.JSX.Element {
   const [openId, setOpenId] = useState<string | null>(null);
+  const [search, setSearch] = useState('');
 
   const toggle = (id: string): void => {
     setOpenId(prev => prev === id ? null : id);
   };
+
+  const filtered = COVERS.filter(t => {
+    const q = search.toLowerCase();
+    return (
+      t.name.toLowerCase().includes(q) ||
+      t.artists.some(a => a.toLowerCase().includes(q)) ||
+      t.album.toLowerCase().includes(q)
+    );
+  });
 
   return (
     <section className={styles.section}>
@@ -17,8 +27,24 @@ export function Covers(): React.JSX.Element {
         covers I can play · click to preview · my versions when available
       </div>
 
+      <div className={styles.searchWrap}>
+        <span className={styles.searchIcon}>▶</span>
+        <input
+          className={styles.searchInput}
+          type="text"
+          placeholder="SEARCH_"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          aria-label="Search tracks"
+        />
+      </div>
+
+      {filtered.length === 0 && (
+        <div className={styles.noResults}>no results found_</div>
+      )}
+
       <div className={styles.list}>
-        {COVERS.map((track, i) => {
+        {filtered.map((track, i) => {
           const isOpen = openId === track.id;
 
           return (
