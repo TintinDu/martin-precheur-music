@@ -27,9 +27,7 @@
 
 .track {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 16px;
+  flex-direction: column;
   border-bottom: 1px solid var(--color-border);
   transition: background var(--timing-fast) var(--ease-out);
 }
@@ -38,8 +36,22 @@
   border-bottom: none;
 }
 
-.track:hover {
+.trackHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background var(--timing-fast) var(--ease-out);
+}
+
+.trackHeader:hover {
   background: var(--color-surface);
+}
+
+.track[data-open='true'] .trackHeader {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .artwork {
@@ -48,14 +60,6 @@
   flex-shrink: 0;
   object-fit: cover;
   filter: saturate(0.7) brightness(0.8);
-  border: 1px solid var(--color-border);
-}
-
-.artworkPlaceholder {
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  background: var(--color-surface2);
   border: 1px solid var(--color-border);
 }
 
@@ -86,6 +90,7 @@
   display: flex;
   gap: 6px;
   flex-shrink: 0;
+  align-items: center;
 }
 
 .linkBtn {
@@ -114,6 +119,16 @@
   color: var(--color-bg);
 }
 
+.linkBtn[data-type='youtube'] {
+  color: #ff3355;
+  border-color: rgba(255, 51, 85, 0.4);
+}
+
+.linkBtn[data-type='youtube']:hover {
+  background: #ff3355;
+  color: var(--color-bg);
+}
+
 .linkBtn[data-type='cover'] {
   color: var(--color-blue);
   border-color: var(--color-blue-dim);
@@ -130,14 +145,31 @@
   cursor: default;
 }
 
-.skeleton {
-  height: 68px;
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  animation: pulse 1.5s ease-in-out infinite;
+.toggleBtn {
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: var(--color-text-muted);
+  background: none;
+  border: 1px solid var(--color-border);
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: all var(--timing-fast) var(--ease-out);
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+.toggleBtn:hover {
+  color: var(--color-blue);
+  border-color: var(--color-blue-dim);
+}
+
+/* Spotify embed panel */
+.embedPanel {
+  padding: 12px 16px;
+  background: var(--color-surface);
+}
+
+.spotifyEmbed {
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  display: block;
 }
