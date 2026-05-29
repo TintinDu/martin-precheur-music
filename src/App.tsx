@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { NowPlaying } from './components/NowPlaying/NowPlaying';
 import { TopArtists } from './components/TopArtists/TopArtists';
 import { TopTracks } from './components/TopTracks/TopTracks';
@@ -58,6 +59,7 @@ export default function App(): React.JSX.Element {
         <span>TintinDu / martin-precheur-music</span>
         <span>made with ♥ Claude</span>
       </footer>
+      <Analytics />
     </div>
   );
 }
