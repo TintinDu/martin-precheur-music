@@ -19,7 +19,9 @@ export function TopTracks(): React.JSX.Element {
     queryFn: () => getTopTracks(range),
   });
 
-  const tracks = data?.slice(0, 20) ?? [];
+  const tracks = data
+    ? [...data].sort((a, b) => b.streams - a.streams).slice(0, 20)
+    : [];
 
   return (
     <section className={styles.section}>
@@ -52,7 +54,7 @@ export function TopTracks(): React.JSX.Element {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.025, duration: 0.3 }}
               >
-                <span className={styles.position}>{item.position}</span>
+                <span className={styles.position}>{i + 1}</span>
                 {item.track.albums[0]?.image ? (
                   <img
                     src={item.track.albums[0].image}

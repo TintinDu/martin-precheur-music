@@ -19,7 +19,9 @@ export function TopArtists(): React.JSX.Element {
     queryFn: () => getTopArtists(range),
   });
 
-  const artists = data?.slice(0, 10) ?? [];
+  const artists = data
+    ? [...data].sort((a, b) => b.streams - a.streams).slice(0, 10)
+    : [];
 
   return (
     <section className={styles.section}>
@@ -44,7 +46,7 @@ export function TopArtists(): React.JSX.Element {
           ? Array.from({ length: 10 }).map((_, i) => (
               <div key={i} className={styles.skeleton} />
             ))
-          : artists.map((item, i) => (
+          : artists.map((item, i) => (  // i+1 = real rank by streams
               <motion.div
                 key={`${item.artist.id}-${range}`}
                 className={styles.artistCard}
@@ -58,7 +60,7 @@ export function TopArtists(): React.JSX.Element {
                     alt={item.artist.name}
                     className={styles.image}
                   />
-                  <span className={styles.rank}>#{item.position}</span>
+                  <span className={styles.rank}>#{i + 1}</span>
                 </div>
                 <div className={styles.name}>{item.artist.name}</div>
                 <div className={styles.streams}>{item.streams.toLocaleString()} plays</div>
